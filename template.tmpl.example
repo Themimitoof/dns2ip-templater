@@ -1,0 +1,16 @@
+http:
+  middlewares:
+    no-server-header:
+      headers:
+        customResponseHeaders:
+          Server: ""
+    internal_only:
+      IPAllowList:
+        rejectStatusCode: 200
+        sourceRange:
+          {{- range $service, $ips := . }}
+            # {{ $service }}
+            {{- range $ip := $ips}}
+            - {{ $ip }}
+            {{- end}}
+          {{- end }}
