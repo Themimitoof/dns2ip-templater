@@ -1,3 +1,4 @@
+version: 2
 project_name: dns2ip-templater
 
 before:
@@ -22,18 +23,10 @@ builds:
       - 7
 
 archives:
-  - replacements:
-      darwin: MacOS
-      linux: Linux
-      windows: Windows
-      amd64: x86_64
-      arm: armhf
+  - id: dns2ip-templater_archives
 
 checksum:
   name_template: "checksums.txt"
-
-snapshot:
-  name_template: "{{ incpatch .Version }}-next"
 
 changelog:
   sort: asc

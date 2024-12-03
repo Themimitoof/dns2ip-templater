@@ -2,3 +2,5 @@ dns2ip-templater
 *.txt
 config.yml
 template.tmpl
+
+dist/
